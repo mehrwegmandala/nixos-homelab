@@ -4,8 +4,7 @@
   services.paperless = {
     enable = true;
     address = "0.0.0.0";
-    port = 28981;
-    openFirewall = true;
+    port = 28981;   
     mediaDir = "/mnt/storage/paperless/media";
     consumptionDir = "/mnt/storage/paperless/consume";
     settings = {
@@ -16,4 +15,5 @@
       };
     };
   };
+  networking.firewall.allowedTCPPorts = [ 28981 ];
 }
