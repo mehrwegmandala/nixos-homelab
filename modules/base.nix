@@ -2,6 +2,7 @@
 
 {
   boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.configurationLimit = 10; # Begrenzt Kernel/Einträge im Boot-Menü
   boot.loader.efi.canTouchEfiVariables = true;
 
   time.timeZone = "Europe/Berlin";
@@ -36,7 +37,7 @@
   security.sudo.wheelNeedsPassword = false;
 
   environment.systemPackages = with pkgs; [
-    git vim nano curl btop htop pciutils
+    git vim nano curl btop htop pciutils intel-gpu-tools
   ];
 
   system.stateVersion = "26.05";
