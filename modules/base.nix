@@ -20,7 +20,9 @@
     dates = "weekly";
     options = "--delete-older-than 14d";
   };
-
+  
+  services.tailscale.enable = true;
+  networking.firewall.checkReversePath = "loose";
   services.openssh = {
     enable = true;
     settings.PasswordAuthentication = false;
